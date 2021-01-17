@@ -12,6 +12,7 @@ public class App {
     }
 
     public static void main(String[] args){
+        System.out.println(System.getProperty("java.library.path"));
         final App helloWorld = new App();
         helloWorld.sayHelloWorld();
     }

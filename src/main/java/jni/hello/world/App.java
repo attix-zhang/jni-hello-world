@@ -4,7 +4,7 @@
 package jni.hello.world;
 
 public class App {
-    public native void sayHelloWorld();
+    public native void helloWorld();
 
     static{
         System.loadLibrary("HelloWorldImpl");
@@ -14,6 +14,6 @@ public class App {
     public static void main(String[] args){
         System.out.println(System.getProperty("java.library.path"));
         final App helloWorld = new App();
-        helloWorld.sayHelloWorld();
+        helloWorld.helloWorld();
     }
 }

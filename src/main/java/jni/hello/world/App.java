@@ -4,11 +4,15 @@
 package jni.hello.world;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
+    public native void sayHelloWorld();
+
+    static{
+        System.loadLibrary("HelloWorldImpl");
+        //System.load(System.getProperty("user.dir") + "/libHelloWorldImpl.jnilib");
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+    public static void main(String[] args){
+        final App helloWorld = new App();
+        helloWorld.sayHelloWorld();
     }
 }

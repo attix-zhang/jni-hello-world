@@ -48,7 +48,7 @@ task generateJniLib(type: Exec) {
     commandLine "gcc",
         "-I${javaHome}/include/", "-I${javaHome}/include/darwin/",
         "-dynamiclib", "jni_hello_world_App.cpp",
-        "-o", "libHelloWorldImpl.jnilib"
+        "-o", "libHelloWorldImpl.dylib"
 
     dependsOn copyHeaderAndCppFiles
 }

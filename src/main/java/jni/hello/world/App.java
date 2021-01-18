@@ -4,16 +4,19 @@
 package jni.hello.world;
 
 public class App {
-    public native void helloWorld();
+    public native void helloWorldPublic();
+
+    private native void helloWorldPrivate();
 
     static{
         System.loadLibrary("HelloWorldImpl");
-        //System.load(System.getProperty("user.dir") + "/libHelloWorldImpl.jnilib");
+        //System.load(System.getProperty("user.dir") + "/libHelloWorldImpl.dylib");
     }
 
     public static void main(String[] args){
         System.out.println(System.getProperty("java.library.path"));
         final App helloWorld = new App();
-        helloWorld.helloWorld();
+        helloWorld.helloWorldPublic();
+        helloWorld.helloWorldPrivate();
     }
 }
